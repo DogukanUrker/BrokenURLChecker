@@ -2,4 +2,7 @@ import requests
 
 
 def getResponseCode(url):
-    return {"responseCode": requests.get(url).status_code}
+    try:
+        return {"responseCode": requests.get(url).status_code}
+    except:
+        return {"responseCode": 404}
