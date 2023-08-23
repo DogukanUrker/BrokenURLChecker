@@ -1,11 +1,10 @@
-from fastapi import FastAPI, HTTPException
-import jwt
-from fastapi.encoders import jsonable_encoder
-from fastapi.middleware.cors import CORSMiddleware
-from models import urlModel
-from checker import getResponseCode
 import uvicorn
+from models import urlModel
+from fastapi import FastAPI
+from checker import getResponseCode
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 origins = ["*"]
