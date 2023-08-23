@@ -2,7 +2,6 @@ import uvicorn
 from models import urlModel
 from fastapi import FastAPI
 from checker import getResponseCode
-from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -20,10 +19,7 @@ app.add_middleware(
 
 @app.post("/checkURL", response_model=urlModel)
 def checkURL(url: urlModel):
-    try:
-        return getResponseCode(url.url)
-    except:
-        return JSONResponse(status_code=401)
+    return getResponseCode(url.url)
 
 
 if __name__ == "__main__":
