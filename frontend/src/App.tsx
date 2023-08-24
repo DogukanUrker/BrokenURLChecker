@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import { API } from "./dependencies";
+
 function App() {
   const [url, setURL] = useState("");
   const [code, setCode] = useState(0);
@@ -8,7 +10,7 @@ function App() {
       return;
     } else {
       axios
-        .post(`http://127.0.0.1:8000/checkURL`, {
+        .post(`${API}checkURL`, {
           url: `https://${url}`,
         })
         .then(function(response) {
@@ -16,6 +18,7 @@ function App() {
         });
     }
   };
+
   const status = () => {
     if (code == 0) {
       return;
@@ -35,11 +38,12 @@ function App() {
       );
     }
   };
+
   return (
     <>
       <div className="grid h-screen place-items-center">
         <div className="p-6 bg-zinc-900 rounded-md">
-          <div className="mb-4 w-72 flex justify-between text-white mx-auto text-xl font-bold select-none duration-150">
+          <div className="mb-4 w-72 flex justify-between text-white mx-auto text-xl font-bold select-none">
             {status()}
           </div>
           <input
