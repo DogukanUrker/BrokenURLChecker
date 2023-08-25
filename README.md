@@ -1,6 +1,6 @@
 # [BrokenURLChecker🔗](https://dogukanurker.com/brokenurlchecker)
 
-Check a link working or not.🖇️
+Check whether a link working or not.🖇️
 <br/>
 [Contact](mailto:dogukanurker@icloud.com)<br/>
 [Dogukan Urker](https://dogukanurker.com)
